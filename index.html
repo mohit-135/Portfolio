@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mohit | Portfolio</title>
+  <meta name="description" content="Mohit's portfolio — frontend developer. HTML, CSS, responsive design, projects." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Particle canvas -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- NAV -->
+  <header class="site-header" role="banner">
+    <nav class="navbar container" role="navigation" aria-label="Primary">
+      <a class="logo" href="#home">MOHIT</a>
+      <button id="hamburger" class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" data-link>Home</a></li>
+        <li><a href="#projects" data-link>Projects</a></li>
+        <li><a href="#skills" data-link>Skills</a></li>
+        <li><a href="#contact" data-link>Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section id="home" class="hero container" tabindex="-1">
+      <div class="hero-left">
+        <h1 class="hero-title">Hi, I'm <span class="accent">Mohit</span></h1>
+        <p class="typewriter" id="typewriter" aria-live="polite"></p>
+        <p class="lead">I build modern, responsive front-end interfaces using HTML & CSS. I love minimal, performant UI and clean code.</p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">View My Work</a>
+          <a class="btn outline" href="cv.pdf" download>Download CV</a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <img src="images/profile.jpg" alt="Mohit's profile photo" class="profile-photo" />
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects container">
+      <h2 class="section-title">Projects</h2>
+      <div class="project-grid">
+        <article class="project-card" tabindex="0" data-project="spotify">
+          <img src="images/spotify.png" alt="Spotify Clone preview" />
+          <h3>Spotify Clone</h3>
+          <p>Responsive music UI built with HTML & CSS.</p>
+          <button class="btn small" data-open="spotify">Preview</button>
+        </article>
+
+        <article class="project-card" tabindex="0" data-project="portfolio">
+          <img src="images/portfolio.png" alt="Portfolio preview" />
+          <h3>Portfolio Website</h3>
+          <p>Dark-modern portfolio (this project).</p>
+          <button class="btn small" data-open="portfolio">Preview</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="skills container">
+      <h2 class="section-title">Skills</h2>
+      <div class="skill-list">
+        <div class="skill">
+          <h4>HTML</h4>
+          <div class="meter"><span style="width:95%"></span></div>
+        </div>
+        <div class="skill">
+          <h4>CSS</h4>
+          <div class="meter"><span style="width:92%"></span></div>
+        </div>
+        <div class="skill">
+          <h4>Responsive Design</h4>
+          <div class="meter"><span style="width:40%"></span></div>
+        </div>
+        <div class="skill">
+          <h4>Git & GitHub</h4>
+          <div class="meter"><span style="width:65%"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact container" aria-labelledby="contact-heading">
+      <h2 id="contact-heading" class="section-title">Contact</h2>
+      <p class="lead">Want to work together? Send me a message.</p>
+
+      <form id="contactForm" class="contact-form" novalidate>
+        <div class="row">
+          <label>
+            <span class="label-text">Name</span>
+            <input id="name" name="name" type="text" required />
+          </label>
+
+          <label>
+            <span class="label-text">Email</span>
+            <input id="email" name="email" type="email" required />
+          </label>
+        </div>
+
+        <label>
+          <span class="label-text">Message</span>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Send Message</button>
+          <button type="button" id="mailFallback" class="btn outline">Email Me</button>
+        </div>
+
+        <p class="form-status" id="formStatus" aria-live="polite"></p>
+      </form>
+
+      <div class="socials">
+        <a href="https://github.com/mohit-135" aria-label="GitHub">GitHub</a>
+        <a href="#" aria-label="Instagram">LinkedIn</a>
+        <a href="#" aria-label="Youtube">Twitter</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Mohit | Made with ❤️</p>
+    </div>
+  </footer>
+
+  <!-- Project Modal / Lightbox -->
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-label="Project preview">
+    <div class="modal-content" role="document">
+      <button id="modalClose" class="modal-close" aria-label="Close preview">✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
