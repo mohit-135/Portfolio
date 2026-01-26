@@ -1,8 +1,8 @@
-/* ===== Typewriter (v4) ===== */
+/* ===== Typewriter Effect ===== */
 const typewriterPhrases = [
   "Frontend Developer.",
-  "HTML & CSS Enthusiast.",
-  "I make clean, responsive UI."
+  "JavaScript Enthusiast.",
+  "Learning React."
 ];
 let twIndex = 0, twChar = 0, twForward = true;
 const twEl = document.getElementById('typewriter');
@@ -33,7 +33,7 @@ document.querySelectorAll('[data-link]').forEach(a=>{
   a.addEventListener('click', ()=> navLinks.classList.remove('active'));
 });
 
-/* ===== Scroll reveal for elements with .fade-up ===== */
+/* ===== Scroll reveal ===== */
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(e.isIntersecting) e.target.classList.add('in-view');
@@ -43,7 +43,7 @@ document.querySelectorAll('.fade-up, .hero, .projects, .skills, .contact').forEa
   el.classList.add('fade-up'); observer.observe(el);
 });
 
-/* ===== Modal / Project preview (v5) ===== */
+/* ===== Modal / Project preview ===== */
 const modal = document.getElementById('modal');
 const modalBody = document.getElementById('modalBody');
 const modalClose = document.getElementById('modalClose');
@@ -52,14 +52,22 @@ document.querySelectorAll('[data-open]').forEach(btn=>{
   btn.addEventListener('click', ()=>{
     const id = btn.getAttribute('data-open');
     // simple static content for preview — expand as needed
-    if(id === 'spotify'){
-      modalBody.innerHTML = `<h3>Spotify Clone</h3>
-        <p>A static responsive clone of Spotify UI built using HTML & CSS.</p>
-        <img src="images/spotify.png" alt="spotify preview" style="width:100%;border-radius:8px;margin-top:8px">`;
+    if(id === 'photographyportfolio'){
+      modalBody.innerHTML = `<h3>Photography Portfolio</h3>
+        <p>Personal Photography Portfolio showcasing my photography skills,and Web development skills.</p>
+        <img src="images/photographyportfolio.png" alt="Photography Portfolio preview" style="width:100%;border-radius:8px;margin-top:8px">`;
     } else if(id === 'portfolio'){
-      modalBody.innerHTML = `<h3>Portfolio</h3>
-        <p>This portfolio project (dark modern theme) built with HTML, CSS & small JS enhancements.</p>
+      modalBody.innerHTML = `<h3>Portfolio Website</h3>
+        <p>Personal portfolio showcasing frontend fundamentals, UI design and performance.(this project).</p>
         <img src="images/portfolio.png" alt="portfolio preview" style="width:100%;border-radius:8px;margin-top:8px">`;
+    } else if(id === 'weatherweb'){
+      modalBody.innerHTML = `<h3>Weather Website</h3>
+        <p>Responsive Weather website focusing on my javascript skills and clean CSS structure.</p>
+        <img src="images/weather.png" alt="portfolio preview" style="width:100%;border-radius:8px;margin-top:8px">`;
+    }else if(id === 'todoweb'){
+      modalBody.innerHTML = `<h3>To-Do Website</h3>
+        <p>Responsive To-Do Website focusing on my javascript skills and clean CSS structure.</p>
+        <img src="images/todo.png" alt="portfolio preview" style="width:100%;border-radius:8px;margin-top:8px">`;
     }
     modal.setAttribute('aria-hidden','false');
     modal.style.display='flex';

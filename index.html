@@ -6,7 +6,7 @@
   <title>Mohit | Portfolio</title>
   <meta name="description" content="Mohit's portfolio — frontend developer. HTML, CSS, responsive design, projects." />
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="images/logo.jpg">
+  <link rel="icon" href="images/logo2.png">
 </head>
 <body>
   <!-- Particle canvas -->
@@ -32,10 +32,10 @@
       <div class="hero-left">
         <h1 class="hero-title">Hi, I'm <span class="accent">Mohit</span></h1>
         <p class="typewriter" id="typewriter" aria-live="polite"></p>
-        <p class="lead">I build modern, responsive front-end interfaces using HTML & CSS. I love minimal, performant UI and clean code.</p>
+        <p class="lead">Frontend developer focused on building clean, responsive and user-friendly interfaces. Strong foundation in HTML, CSS, JavaScript and currently learning React.</p>
 
         <div class="hero-actions">
-          <a class="btn primary" href="#projects">View My Work</a>
+          <a class="btn primary" href="#projects">See My Work</a>
           <a class="btn outline" href="cv.pdf" download>Download CV</a>
         </div>
       </div>
@@ -49,19 +49,50 @@
     <section id="projects" class="projects container">
       <h2 class="section-title">Projects</h2>
       <div class="project-grid">
-        <article class="project-card" tabindex="0" data-project="spotify">
-          <img src="images/spotify.png" alt="Spotify Clone preview" />
-          <h3>Spotify Clone</h3>
-          <p>Responsive music UI built with HTML & CSS.</p>
-          <button class="btn small" data-open="spotify">Preview</button>
+        <article class="project-card" tabindex="0" data-project="photographyportfolio">
+          <img src="images/photographyportfolio.png" alt="Photography Portfolio preview" />
+          <h3>Photography Portfolio</h3>
+          <p>Personal Photography Portfolio showcasing my photography skills,and Web development skills.</p>
+          <div class="project-links">
+          <a href="https://mohit-135.github.io/Photography/" target="_blank">Live</a>
+          <a href="https://github.com/mohit-135/Photography" target="_blank">GitHub</a>
+          </div>
+          <button class="btn small" data-open="photographyportfolio">Preview</button>
         </article>
-
+        
         <article class="project-card" tabindex="0" data-project="portfolio">
           <img src="images/portfolio.png" alt="Portfolio preview" />
           <h3>Portfolio Website</h3>
-          <p>Dark-modern portfolio (this project).</p>
+          <p>Personal portfolio showcasing frontend fundamentals, UI design and performance.(this project).</p>
+          <div class="project-links">
+          <a href="#" target="_blank">Live</a>
+          <a href="https://mohit-135.github.io/Portfolio/" target="_blank">GitHub</a>
+          </div>
           <button class="btn small" data-open="portfolio">Preview</button>
         </article>
+
+        <article class="project-card" tabindex="0" data-project="weatherweb">
+          <img src="images/weather.png" alt="weather app preview" />
+          <h3>Weather Website</h3>
+          <p>Responsive Weather website focusing on my javascript skills and clean CSS structure.</p>
+           <div class="project-links">
+          <a href="https://mohit-135.github.io/Weather-Website/" target="_blank">Live</a>
+          <a href="https://github.com/mohit-135/Weather-Website" target="_blank">GitHub</a>
+          </div>
+          <button class="btn small" data-open="weatherweb">Preview</button>
+        </article>
+        
+        <article class="project-card" tabindex="0" data-project="todoweb">
+          <img src="images/Todo.png" alt="To-Do app preview" />
+          <h3>To-Do Website</h3>
+          <p>Responsive To-Do website focusing on my javascript skills and clean CSS structure.</p>
+           <div class="project-links">
+          <a href="https://mohit-135.github.io/To-Do-Website/" target="_blank">Live</a>
+          <a href="https://github.com/mohit-135/To-Do-Website" target="_blank">GitHub</a>
+          </div>
+          <button class="btn small" data-open="todoweb">Preview</button>
+        </article>
+
       </div>
     </section>
 
@@ -70,28 +101,28 @@
       <h2 class="section-title">Skills</h2>
       <div class="skill-list">
         <div class="skill">
-          <h4>HTML</h4>
-          <div class="meter"><span style="width:95%"></span></div>
+          <h4>Frontend</h4>
+          <p>HTML, CSS, Responsive Design, Accessibility</p>
         </div>
         <div class="skill">
-          <h4>CSS</h4>
-          <div class="meter"><span style="width:92%"></span></div>
+          <h4>JavaScript</h4>
+          <p>DOM manipulation, events, logic, async basics</p>
         </div>
         <div class="skill">
-          <h4>Responsive Design</h4>
-          <div class="meter"><span style="width:40%"></span></div>
+          <h4>React</h4>
+          <p>Components, props, hooks (learning)</p>
         </div>
         <div class="skill">
-          <h4>Git & GitHub</h4>
-          <div class="meter"><span style="width:65%"></span></div>
+          <h4>Tools</h4>
+          <p>Git, GitHub, Tailwind CSS</p>
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="contact container" aria-labelledby="contact-heading">
-      <h2 id="contact-heading" class="section-title">Contact</h2>
-      <p class="lead">Want to work together? Send me a message.</p>
+    <!-- <section id="contact" class="contact container" aria-labelledby="contact-heading"> -->
+      <!-- <h2 id="contact-heading" class="section-title">Contact</h2> -->
+      <!-- <p class="lead">Want to work together? Send me a message.</p> -->
 
       <form id="contactForm" class="contact-form" novalidate>
         <div class="row">
@@ -118,19 +149,26 @@
 
         <p class="form-status" id="formStatus" aria-live="polite"></p>
       </form>
+      
+    <!-- CONTACT -->
+    <section id="contact" class="contact container" aria-labelledby="contact-heading">
+      <h2 id="contact-heading" class="section-title">Contact</h2>
+      <p class="lead">Open to internships, junior roles and learning opportunities.</p>
 
       <div class="socials">
-        <a href="https://github.com/mohit-135" aria-label="GitHub">GitHub</a>
-        <a href="#" aria-label="Instagram">LinkedIn</a>
-        <a href="#" aria-label="Youtube">Twitter</a>
+        <a href="https://github.com/mohit-135" target="_blank">GitHub</a>
+      <a href="#" target="_blank">LinkedIn</a>
+      <a href="https://x.com/mohit_suthar24" target="_blank">Twitter</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSKkwmkFNRkDVQWWwZbMMPNMpmLhXgrFHzvNnJKLdppfhVdxvQkTDmrQsDkXcZWjbpXVRcXx">Email</a>
       </div>
     </section>
+
   </main>
 
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
-      <p>© 2025 Mohit | Made with ❤️</p>
+      <p>© 2025 Mohit • Built with HTML, CSS, JavaScript, & ❤️</p>
     </div>
   </footer>
 
