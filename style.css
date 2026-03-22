@@ -348,6 +348,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 56px;
   }
   .nav-links{
     position:fixed;
@@ -387,8 +388,16 @@ body{
   .container{
   max-width:380px;
   margin:0 auto;
-  padding:0 20px
-}
+  padding:0 20px;}
+
+  .socials{
+    display: flex;
+    flex-direction: column;
+  }
+  .project-card img{
+  width:90%;
+  height:210px;
+  }
 }
 .socials{
   display: flex ;
@@ -401,3 +410,4 @@ body{
   padding:8px 32px; 
   font-size : 20px;
 }
+
