@@ -33,6 +33,25 @@ document.querySelectorAll('[data-link]').forEach(a=>{
   a.addEventListener('click', ()=> navLinks.classList.remove('active'));
 });
 
+/* ===== Theme toggle ===== */
+const themeToggle = document.getElementById('themeToggle');
+const savedTheme = localStorage.getItem('portfolio-theme');
+
+if(savedTheme === 'light'){
+  document.body.classList.add('light-theme');
+  themeToggle.setAttribute('aria-label', 'Switch to dark mode');
+  themeToggle.querySelector('use').setAttribute('href', '#icon-moon');
+  themeToggle.querySelector('span').textContent = 'Dark';
+}
+
+themeToggle.addEventListener('click', ()=>{
+  const isLight = document.body.classList.toggle('light-theme');
+  localStorage.setItem('portfolio-theme', isLight ? 'light' : 'dark');
+  themeToggle.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
+  themeToggle.querySelector('use').setAttribute('href', isLight ? '#icon-moon' : '#icon-sun');
+  themeToggle.querySelector('span').textContent = isLight ? 'Dark' : 'Light';
+});
+
 /* ===== Scroll reveal ===== */
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(e=>{
@@ -47,28 +66,113 @@ document.querySelectorAll('.fade-up, .hero, .projects, .skills, .contact').forEa
 const modal = document.getElementById('modal');
 const modalBody = document.getElementById('modalBody');
 const modalClose = document.getElementById('modalClose');
+const projects = {
+  photographyportfolio: {
+    title: 'Photography Portfolio',
+    description: 'Personal photography portfolio showcasing photography work and frontend development skills with a polished visual layout.',
+    image: 'images/photographyportfolio.png',
+    alt: 'Photography Portfolio preview',
+    tech: ['HTML', 'CSS', 'JavaScript', 'Responsive Design'],
+    features: ['Dark and light mode', 'Photography gallery layout', 'Responsive project pages'],
+    live: 'https://mohit-135.github.io/Photography/',
+    github: 'https://github.com/mohit-135/Photography'
+  },
+  portfolio: {
+    title: 'Portfolio Website',
+    description: 'Personal portfolio showcasing frontend fundamentals, UI design, projects, and contact links.',
+    image: 'images/portfolio.png',
+    alt: 'Portfolio Website preview',
+    tech: ['HTML', 'CSS', 'JavaScript', 'Animations'],
+    features: ['Responsive sections', 'Project preview modal', 'Interactive project cards'],
+    live: 'https://mohit-135.github.io/Portfolio/',
+    github: 'https://github.com/mohit-135/Portfolio'
+  },
+  weatherweb: {
+    title: 'Weather Website',
+    description: 'Responsive weather website focused on JavaScript logic, DOM updates, and clean CSS structure.',
+    image: 'images/weather.png',
+    alt: 'Weather Website preview',
+    tech: ['HTML', 'CSS', 'JavaScript', 'API'],
+    features: ['City weather search', 'Responsive layout', 'Dynamic weather details'],
+    live: 'https://mohit-135.github.io/Weather-Website/',
+    github: 'https://github.com/mohit-135/Weather-Website'
+  },
+  todoweb: {
+    title: 'To-Do Website',
+    description: 'Responsive to-do website focused on JavaScript task logic and a clean user experience.',
+    image: 'images/todo.png',
+    alt: 'To-Do Website preview',
+    tech: ['HTML', 'CSS', 'JavaScript', 'DOM'],
+    features: ['Add and manage tasks', 'Simple task workflow', 'Responsive interface'],
+    live: 'https://mohit-135.github.io/To-Do/',
+    github: 'https://github.com/mohit-135/To-Do'
+  }
+};
+
+function listItems(items, className){
+  return items.map(item => `<li>${item}</li>`).join('');
+}
+
+document.querySelectorAll('.project-card[data-live]').forEach(card=>{
+  const liveUrl = card.getAttribute('data-live');
+
+  card.addEventListener('click', (e)=>{
+    if(e.target.closest('a, button')) return;
+    window.open(liveUrl, '_blank', 'noopener');
+  });
+
+  card.addEventListener('keydown', (e)=>{
+    if(e.target.closest('a, button')) return;
+    if(e.key === 'Enter' || e.key === ' '){
+      e.preventDefault();
+      window.open(liveUrl, '_blank', 'noopener');
+    }
+  });
+});
 
 document.querySelectorAll('[data-open]').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
+  btn.addEventListener('click', (e)=>{
+    e.stopPropagation();
     const id = btn.getAttribute('data-open');
-    // simple static content for preview — expand as needed
-    if(id === 'photographyportfolio'){
-      modalBody.innerHTML = `<h3>Photography Portfolio</h3>
-        <p>Personal Photography Portfolio showcasing my photography skills,and Web development skills.</p>
-        <img src="images/photographyportfolio.png" alt="Photography Portfolio preview" style="width:100%;border-radius:8px;margin-top:8px">`;
-    } else if(id === 'portfolio'){
-      modalBody.innerHTML = `<h3>Portfolio Website</h3>
-        <p>Personal portfolio showcasing frontend fundamentals, UI design and performance.(this project).</p>
-        <img src="images/portfolio.png" alt="portfolio preview" style="width:100%;border-radius:8px;margin-top:8px">`;
-    } else if(id === 'weatherweb'){
-      modalBody.innerHTML = `<h3>Weather Website</h3>
-        <p>Responsive Weather website focusing on my javascript skills and clean CSS structure.</p>
-        <img src="images/weather.png" alt="portfolio preview" style="width:100%;border-radius:8px;margin-top:8px">`;
-    }else if(id === 'todoweb'){
-      modalBody.innerHTML = `<h3>To-Do Website</h3>
-        <p>Responsive To-Do Website focusing on my javascript skills and clean CSS structure.</p>
-        <img src="images/todo.png" alt="portfolio preview" style="width:100%;border-radius:8px;margin-top:8px">`;
-    }
+    const project = projects[id];
+    if(!project) return;
+
+    modalBody.innerHTML = `
+      <div class="modal-project">
+        <div class="live-preview">
+          <div class="preview-bar">
+            <span></span>
+            <span></span>
+            <span></span>
+            <strong>${project.live}</strong>
+          </div>
+          <iframe
+            src="${project.live}"
+            title="${project.title} live website preview"
+            loading="lazy">
+          </iframe>
+        </div>
+        <div>
+          <h3>${project.title}</h3>
+          <p>${project.description}</p>
+          <div class="modal-block">
+            <h4>Tech Used</h4>
+            <ul class="tag-list">${listItems(project.tech, 'tag-list')}</ul>
+          </div>
+          <div class="modal-block">
+            <h4>Features</h4>
+            <ul class="feature-list">${listItems(project.features, 'feature-list')}</ul>
+          </div>
+          <div class="modal-actions">
+            <a class="btn primary" href="${project.live}" target="_blank" rel="noopener">
+              <svg class="icon"><use href="#icon-external"></use></svg>Live Website
+            </a>
+            <a class="btn outline" href="${project.github}" target="_blank" rel="noopener">
+              <svg class="icon"><use href="#icon-github"></use></svg>GitHub
+            </a>
+          </div>
+        </div>
+      </div>`;
     modal.setAttribute('aria-hidden','false');
     modal.style.display='flex';
     modalClose.focus();

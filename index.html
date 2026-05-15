@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mohit | Portfolio</title>
+  <title>Mohit Suthar | Portfolio</title>
   <meta name="description" content="Mohit's portfolio — frontend developer. HTML, CSS, responsive design, projects." />
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="images/logo.png">
@@ -12,10 +12,68 @@
   <!-- Particle canvas -->
   <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
+  <svg aria-hidden="true" class="icon-sprite" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="icon-eye" viewBox="0 0 24 24">
+      <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"/>
+      <circle cx="12" cy="12" r="3"/>
+    </symbol>
+    <symbol id="icon-github" viewBox="0 0 24 24">
+      <path d="M15 22v-4a4 4 0 0 0-1-3c3 0 6-1.5 6-6a4.5 4.5 0 0 0-1.2-3.1c.1-.5.5-1.8-.1-3.2 0 0-1-.3-3.3 1.2a11.5 11.5 0 0 0-6 0C7.1 2.4 6.1 2.7 6.1 2.7c-.6 1.4-.2 2.7-.1 3.2A4.5 4.5 0 0 0 4.8 9c0 4.5 3 6 6 6a4 4 0 0 0-1 3v4"/>
+      <path d="M9 18c-4.5 2-4.5-2-6-2"/>
+    </symbol>
+    <symbol id="icon-linkedin" viewBox="0 0 24 24">
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V9h4v2a5 5 0 0 1 2-3Z"/>
+      <path d="M2 9h4v12H2z"/>
+      <circle cx="4" cy="4" r="2"/>
+    </symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24">
+      <rect x="3" y="5" width="18" height="14" rx="2"/>
+      <path d="m3 7 9 6 9-6"/>
+    </symbol>
+    <symbol id="icon-code" viewBox="0 0 24 24">
+      <path d="m8 18-6-6 6-6"/>
+      <path d="m16 6 6 6-6 6"/>
+      <path d="m14 4-4 16"/>
+    </symbol>
+    <symbol id="icon-js" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="18" rx="2"/>
+      <path d="M9 8v7a2 2 0 0 1-2 2"/>
+      <path d="M14 16c.5.7 1.2 1 2 1 1.2 0 2-.6 2-1.5 0-2-4-1-4-4 0-1.5 1.3-2.5 3-2.5 1 0 1.8.3 2.4 1"/>
+    </symbol>
+    <symbol id="icon-react" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="2"/>
+      <ellipse cx="12" cy="12" rx="9" ry="3.5"/>
+      <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(60 12 12)"/>
+      <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(120 12 12)"/>
+    </symbol>
+    <symbol id="icon-tool" viewBox="0 0 24 24">
+      <path d="M14.7 6.3a4 4 0 0 0-5 5L3 18l3 3 6.7-6.7a4 4 0 0 0 5-5l-3 3-3-3 3-3Z"/>
+    </symbol>
+    <symbol id="icon-sun" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+    </symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24">
+      <path d="M20.8 15.6A8.5 8.5 0 0 1 8.4 3.2 8.5 8.5 0 1 0 20.8 15.6Z"/>
+    </symbol>
+    <symbol id="icon-x" viewBox="0 0 24 24">
+      <path d="M4 4l16 16M20 4 4 20"/>
+    </symbol>
+    <symbol id="icon-external" viewBox="0 0 24 24">
+      <path d="M14 3h7v7"/>
+      <path d="M10 14 21 3"/>
+      <path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/>
+    </symbol>
+  </svg>
+
   <!-- NAV -->
   <header class="site-header" role="banner">
     <nav class="navbar container" role="navigation" aria-label="Primary">
-      <a class="logo" href="#home">MOHIT</a>
+      <a class="logo" href="#home">MOHIT SUTHAR</a>
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch to light mode">
+        <svg class="icon"><use href="#icon-sun"></use></svg>
+        <span>Light</span>
+      </button>
       <button id="hamburger" class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
       <ul class="nav-links" id="navLinks">
         <li><a href="#home" data-link>Home</a></li>
@@ -30,7 +88,7 @@
   <main>
     <section id="home" class="hero container" tabindex="-1">
       <div class="hero-left">
-        <h1 class="hero-title">Hi, I'm <span class="accent">Mohit</span></h1>
+        <h1 class="hero-title">Hi, I'm <span class="accent">Mohit Suthar</span></h1>
         <p class="typewriter" id="typewriter" aria-live="polite"></p>
         <p class="lead">Frontend developer focused on building clean, responsive and user-friendly interfaces. Strong foundation in HTML, CSS, JavaScript and currently learning React.</p>
 
@@ -49,48 +107,56 @@
     <section id="projects" class="projects container">
       <h2 class="section-title">Projects</h2>
       <div class="project-grid">
-        <article class="project-card" tabindex="0" data-project="photographyportfolio">
-          <img src="./images/photographyportfolio.png" alt="Photography Portfolio preview" />
+        <article class="project-card" tabindex="0" data-project="photographyportfolio" data-live="https://mohit-135.github.io/Photography/" aria-label="Open Photography Portfolio live website">
+          <div class="project-media">
+            <img src="./images/photographyportfolio.png" alt="Photography Portfolio preview" />
+            <span class="project-overlay"><svg class="icon"><use href="#icon-external"></use></svg>View Live Project</span>
+          </div>
           <h3>Photography Portfolio</h3>
           <p>Personal Photography Portfolio showcasing my photography skills,and Web development skills.Which inlude dark and light mode</p>
           <div class="project-links">
-          <a href="https://mohit-135.github.io/Photography/" target="_blank">Live</a>
-          <a href="https://github.com/mohit-135/Photography" target="_blank">GitHub</a>
+            <button class="btn small" type="button" data-open="photographyportfolio"><svg class="icon"><use href="#icon-eye"></use></svg>Preview</button>
+            <a class="btn small" href="https://github.com/mohit-135/Photography" target="_blank" rel="noopener"><svg class="icon"><use href="#icon-github"></use></svg>GitHub</a>
           </div>
-          <button class="btn small" data-open="photographyportfolio">Preview</button>
         </article>
         
-        <article class="project-card" tabindex="0" data-project="portfolio">
-          <img src="./images/portfolio.png" alt="Portfolio preview" />
+        <article class="project-card" tabindex="0" data-project="portfolio" data-live="https://mohit-135.github.io/Portfolio/" aria-label="Open Portfolio Website live website">
+          <div class="project-media">
+            <img src="./images/portfolio.png" alt="Portfolio preview" />
+            <span class="project-overlay"><svg class="icon"><use href="#icon-external"></use></svg>View Live Project</span>
+          </div>
           <h3>Portfolio Website</h3>
           <p>Personal portfolio showcasing frontend fundamentals, UI design and performance.(this project).</p>
           <div class="project-links">
-          <a href="#" target="_blank">Live</a>
-          <a href="https://mohit-135.github.io/Portfolio/" target="_blank">GitHub</a>
+            <button class="btn small" type="button" data-open="portfolio"><svg class="icon"><use href="#icon-eye"></use></svg>Preview</button>
+            <a class="btn small" href="https://github.com/mohit-135/Portfolio" target="_blank" rel="noopener"><svg class="icon"><use href="#icon-github"></use></svg>GitHub</a>
           </div>
-          <button class="btn small" data-open="portfolio">Preview</button>
         </article>
 
-        <article class="project-card" tabindex="0" data-project="weatherweb">
-          <img src="./images/weather.png" alt="weather app preview" />
+        <article class="project-card" tabindex="0" data-project="weatherweb" data-live="https://mohit-135.github.io/Weather-Website/" aria-label="Open Weather Website live website">
+          <div class="project-media">
+            <img src="./images/weather.png" alt="weather app preview" />
+            <span class="project-overlay"><svg class="icon"><use href="#icon-external"></use></svg>View Live Project</span>
+          </div>
           <h3>Weather Website</h3>
           <p>Responsive Weather website focusing on my javascript skills and clean CSS structure.</p>
-            <div class="project-links">
-          <a href="https://mohit-135.github.io/Weather-Website/" target="_blank">Live</a>
-          <a href="https://github.com/mohit-135/Weather-Website" target="_blank">GitHub</a>
+          <div class="project-links">
+            <button class="btn small" type="button" data-open="weatherweb"><svg class="icon"><use href="#icon-eye"></use></svg>Preview</button>
+            <a class="btn small" href="https://github.com/mohit-135/Weather-Website" target="_blank" rel="noopener"><svg class="icon"><use href="#icon-github"></use></svg>GitHub</a>
           </div>
-          <button class="btn small" data-open="weatherweb">Preview</button>
         </article>
         
-        <article class="project-card" tabindex="0" data-project="todoweb">
-          <img src="./images/todo.png" alt="To-Do app preview" />
+        <article class="project-card" tabindex="0" data-project="todoweb" data-live="https://mohit-135.github.io/To-Do/" aria-label="Open To-Do Website live website">
+          <div class="project-media">
+            <img src="./images/todo.png" alt="To-Do app preview" />
+            <span class="project-overlay"><svg class="icon"><use href="#icon-external"></use></svg>View Live Project</span>
+          </div>
           <h3>To-Do Website</h3>
           <p>Responsive To-Do website focusing on my javascript skills and clean CSS structure.</p>
-            <div class="project-links">
-          <a href="https://mohit-135.github.io/To-Do/" target="_blank">Live</a>
-          <a href="https://github.com/mohit-135/To-Do" target="_blank">GitHub</a>
+          <div class="project-links">
+            <button class="btn small" type="button" data-open="todoweb"><svg class="icon"><use href="#icon-eye"></use></svg>Preview</button>
+            <a class="btn small" href="https://github.com/mohit-135/To-Do" target="_blank" rel="noopener"><svg class="icon"><use href="#icon-github"></use></svg>GitHub</a>
           </div>
-          <button class="btn small" data-open="todoweb">Preview</button>
         </article>
 
       </div>
@@ -101,19 +167,19 @@
       <h2 class="section-title">Skills</h2>
       <div class="skill-list">
         <div class="skill">
-          <h4>Frontend</h4>
+          <h4><svg class="icon"><use href="#icon-code"></use></svg>Frontend</h4>
           <p>HTML, CSS, Responsive Design, Accessibility</p>
         </div>
         <div class="skill">
-          <h4>JavaScript</h4>
-          <p>DOM manipulation, events, logic, async basics</p>
+          <h4><svg class="icon"><use href="#icon-js"></use></svg>JavaScript</h4>
+          <p>DOM manipulation, Events, Logic, Async</p>
         </div>
         <div class="skill">
-          <h4>React</h4>
-          <p>Components, props, hooks (learning)</p>
+          <h4><svg class="icon"><use href="#icon-react"></use></svg>React</h4>
+          <p>Components, Props, Hooks (learning)</p>
         </div>
         <div class="skill">
-          <h4>Tools</h4>
+          <h4><svg class="icon"><use href="#icon-tool"></use></svg>Tools</h4>
           <p>Git, GitHub, Tailwind CSS</p>
         </div>
       </div>
@@ -156,10 +222,10 @@
       <p class="lead">Open to internships, junior roles and learning opportunities.</p>
 
       <div class="socials">
-        <a href="https://github.com/mohit-135" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/mohit-suthar-b5566838a/" target="_blank">LinkedIn</a>
-      <a href="https://x.com/mohit_suthar24" target="_blank">Twitter</a>
-      <a href="mailto:suthamohit999@gmail.com?subject=Hello Mohit&body=I want to connect with you">Email</a>
+        <a href="https://github.com/mohit-135" target="_blank" rel="noopener"><svg class="icon"><use href="#icon-github"></use></svg>GitHub</a>
+      <a href="https://www.linkedin.com/in/mohit-suthar-b5566838a/" target="_blank" rel="noopener"><svg class="icon"><use href="#icon-linkedin"></use></svg>LinkedIn</a>
+      <a href="https://x.com/mohit_suthar24" target="_blank" rel="noopener"><svg class="icon"><use href="#icon-x"></use></svg>X</a>
+      <a href="mailto:suthamohit999@gmail.com?subject=Hello Mohit&body=I want to connect with you"><svg class="icon"><use href="#icon-mail"></use></svg>Email</a>
       </div>
     </section>
 
@@ -168,7 +234,7 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
-      <p>2025 Mohit • Built with HTML, CSS, JavaScript, & ❤️</p>
+      <p>Mohit Suthar Portfolio</p>
     </div>
   </footer>
 
