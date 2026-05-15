@@ -209,6 +209,38 @@ mailFallback.addEventListener('click', ()=> {
   window.location.href = 'mailto:mohit@example.com';
 });
 
+/* ===== Copy email ===== */
+const copyEmail = document.getElementById('copyEmail');
+const copyStatus = document.getElementById('copyStatus');
+
+function showCopyStatus(message){
+  copyStatus.textContent = message;
+  setTimeout(()=> {
+    copyStatus.textContent = 'Click to copy address';
+  }, 1800);
+}
+
+copyEmail.addEventListener('click', async ()=>{
+  const email = copyEmail.getAttribute('data-email');
+  try{
+    if(navigator.clipboard && window.isSecureContext){
+      await navigator.clipboard.writeText(email);
+    } else {
+      const textarea = document.createElement('textarea');
+      textarea.value = email;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      textarea.remove();
+    }
+    showCopyStatus('Copied to clipboard');
+  } catch(error){
+    showCopyStatus('Copy failed');
+  }
+});
+
 /* ===== Particle background (v5) simple canvas) ===== */
 const canvas = document.getElementById('bg-canvas');
 const ctx = canvas.getContext('2d');
