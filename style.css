@@ -746,6 +746,9 @@ button.contact-card{
   .typewriter{
     height:24px
   }
+  .status-badge{
+    margin-top: 70px;
+  }
   .container{
   max-width:380px;
   margin:0 auto;
