@@ -74,7 +74,7 @@ const projects = {
     alt: 'Photography Portfolio preview',
     tech: ['HTML', 'CSS', 'JavaScript', 'Responsive Design'],
     features: ['Dark and light mode', 'Photography gallery layout', 'Responsive project pages'],
-    live: 'https://mohit-135.github.io/Photography/',
+    live: 'https://mohit-photography.netlify.app/',
     github: 'https://github.com/mohit-135/Photography'
   },
   portfolio: {
@@ -84,7 +84,7 @@ const projects = {
     alt: 'Portfolio Website preview',
     tech: ['HTML', 'CSS', 'JavaScript', 'Animations'],
     features: ['Responsive sections', 'Project preview modal', 'Interactive project cards'],
-    live: 'https://mohit-135.github.io/Portfolio/',
+    live: 'https://mohit-suthar-portfolio.netlify.app/',
     github: 'https://github.com/mohit-135/Portfolio'
   },
   weatherweb: {
